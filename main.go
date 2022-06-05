@@ -1,10 +1,11 @@
 package main
 
 import (
+	"bwastartup/handler"
 	"bwastartup/user"
-	"fmt"
 	"log"
 
+	"github.com/gin-gonic/gin"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -17,13 +18,14 @@ func main() {
 		log.Fatal(err.Error())
 	}
 
-	var users []user.User
+	userRepository := user.NewRepository(db)
+	userService := user.NewService(userRepository)
+	userHandler := handler.NewUserHandler(userService)
 
-	db.Find(&users)
+	router := gin.Default()
 
-	for _, user := range users {
-		fmt.Println(user.Name)
-		fmt.Println(user.Email)
-		fmt.Println("============")
-	}
+	api := router.Group("/api/v1")
+	api.POST("/users/register", userHandler.RegisterUser)
+
+	router.Run()
 }
