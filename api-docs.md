@@ -44,3 +44,22 @@ data : {
   is_available: false
 }
 ```
+
+**POST : api/v1/users/avatars**
+
+**params :**
+
+- avatar (form)
+
+**response : **
+
+```json
+meta : {
+  message: 'Avatar successfully uploaded',
+  code: 200,
+  status: 'success'
+},
+data : {
+  is_uploaded: true
+}
+```
