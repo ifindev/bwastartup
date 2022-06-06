@@ -25,6 +25,7 @@ func main() {
 	router := gin.Default()
 
 	api := router.Group("/api/v1")
+	api.POST("/users/login", userHandler.Login)
 	api.POST("/users/register", userHandler.RegisterUser)
 
 	router.Run()
