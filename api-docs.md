@@ -25,3 +25,22 @@ data : {
   token: 'tokenyangsangatpanjang'
 }
 ```
+
+**POST : api/v1/users/email_checkers**
+
+**params :**
+
+- email
+
+**response : **
+
+```json
+meta : {
+  message: 'Email address has been registered',
+  code: 200,
+  status: 'success'
+},
+data : {
+  is_available: false
+}
+```
