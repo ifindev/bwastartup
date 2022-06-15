@@ -2,8 +2,8 @@ package main
 
 import (
 	"bwastartup/auth"
+	"bwastartup/domain/user"
 	"bwastartup/handler"
-	"bwastartup/user"
 	"log"
 
 	"github.com/gin-gonic/gin"

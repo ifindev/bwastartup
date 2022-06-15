@@ -2,8 +2,8 @@ package handler
 
 import (
 	"bwastartup/auth"
+	"bwastartup/domain/user"
 	"bwastartup/helper"
-	"bwastartup/user"
 	"fmt"
 	"net/http"
 
